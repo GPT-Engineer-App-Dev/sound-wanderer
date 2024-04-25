@@ -1,15 +1,32 @@
-// Complete the Index page component here
-// Use chakra-ui
-import { Button } from "@chakra-ui/react"; // example
-import { FaPlus } from "react-icons/fa"; // example - use react-icons/fa for icons
+import { Box, Text, VStack, Heading, Input, Button, Textarea } from '@chakra-ui/react';
+import { FaCalendarAlt, FaMapMarkerAlt, FaEnvelope } from 'react-icons/fa';
 
 const Index = () => {
-  // TODO: Create the website here!
   return (
-    <Button>
-      Hello world! <FaPlus />
-    </Button>
-  ); // example
+    <VStack spacing={10} p={5}>
+      <Heading as="h1" size="2xl" textAlign="center">The Dreamers</Heading>
+      <Text fontSize="xl" textAlign="center">
+        An indie rock band known for their energetic performances and heartfelt lyrics.
+      </Text>
+      <Box>
+        <Heading as="h2" size="lg" my={4}><FaCalendarAlt /> Tour Dates</Heading>
+        <VStack spacing={3}>
+          <Text><FaMapMarkerAlt /> New York - June 15th</Text>
+          <Text><FaMapMarkerAlt /> Los Angeles - June 20th</Text>
+          <Text><FaMapMarkerAlt /> Chicago - June 25th</Text>
+        </VStack>
+      </Box>
+      <Box as="form" w="full" maxW="md">
+        <Heading as="h2" size="lg" my={4}><FaEnvelope /> Contact Us</Heading>
+        <VStack spacing={4}>
+          <Input placeholder="Your Name" />
+          <Input placeholder="Your Email" type="email" />
+          <Textarea placeholder="Your Message" />
+          <Button colorScheme="blue" px={8}>Send</Button>
+        </VStack>
+      </Box>
+    </VStack>
+  );
 };
 
 export default Index;
